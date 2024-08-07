@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@koa/cors": "^5.0.0",
+    "@midwayjs/orm": "^3.4.3",
+    "typeorm": "^0.3.20"
+  },
+  "devDependencies": {
+    "@types/koa__cors": "^5.0.0"
+  }
+}

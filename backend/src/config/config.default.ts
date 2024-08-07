@@ -18,7 +18,7 @@ const ormConfig = {
     type: 'mysql',
     host: 'localhost',
     port: 3306,
-    username: 'root',
+    username: 'test',
     password: 'password',
     database: 'test',
     entities: [User],
