@@ -1,0 +1,35 @@
+/* TopMenu.css */
+
+/* TopMenu.css */
+
+.top-menu {
+    background-color: #acff8c;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    position: fixed; /* 保持在顶部 */
+    top: 0;
+    left: 0;
+  }
+  
+  .login-button {
+    background-color: #f4f4f4;
+    color: #333;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .login-button:hover {
+    background-color: #e0e0e0;
+  }
+  
+
+  

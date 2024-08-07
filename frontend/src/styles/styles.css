@@ -1,0 +1,91 @@
+/* styles.css */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+    width: 100vw; /* 确保宽度为100%视口宽度 */
+    overflow: hidden; /* 避免滚动条 */
+  }
+  
+  .app {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .top-menu {
+    background-color: #baff9fe2;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 60px;
+    width: 100%;  /* 确保宽度为100% */
+    box-sizing: border-box;  /* 确保 padding 不会影响宽度 */
+    margin: 0;  /* 移除任何外边距 */
+  }
+  
+  .login-button {
+    background-color: #ffffff;
+    color: #333;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .login-button:hover {
+    background-color: #e2ffd7;
+  }
+  
+  .main-content {
+    display: flex;
+    flex-grow: 1;
+  }
+  
+  .project-list {
+    width: 22%;
+    background-color: #ffc6da;
+    border: 1px solid #ffcdde;
+    overflow-y: auto;
+    padding: 12px;
+  }
+  
+  .project-board {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #fff;
+  }
+  
+  .task-list {
+    width: 45%;
+    background-color: #e2e2e2;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-y: auto;
+  }
+  
+  .task-list h3 {
+    margin: 0;
+    padding: 10px 0;
+    text-align: center;
+  }
+  
+  .task-list div {
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: grab;
+  }
+  
+  .task-list div:active {
+    cursor: grabbing;
+  }
+  

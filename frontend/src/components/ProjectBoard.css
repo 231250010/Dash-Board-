@@ -1,0 +1,29 @@
+/* src/components/ProjectBoard.css */
+
+.project-board {
+    display: flex;
+    justify-content: flex-end; /* 使 task-list 靠右对齐 */
+    padding: 1rem;
+    box-sizing: border-box;
+    height: 100%; /* 使其占据父容器的高度 */
+  }
+  
+  .task-list {
+    background-color: #f4f5f7;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 1rem;
+    width: 48%; /* 任务列表宽度 */
+    min-height: 500px; /* 可以根据需要调整高度 */
+    box-sizing: border-box;
+  }
+  
+  .task-list h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+  }
+  
+  .task-list:first-of-type {
+    margin-left: 2%; /* 左侧任务列表与下一个列表之间的间距 */
+  }
+  

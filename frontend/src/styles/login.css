@@ -1,0 +1,44 @@
+.login-container {
+  width: 300px;
+  padding: 20px;
+  background-color: #ffb9d1
+  border-radius 5px;
+  box-shadow: 0 0 10px #ffb9d1;
+  position: absolute;
+  top: 50%;
+  left: 50%; /* 将灰色外框向右移动 */
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+
+}
+  
+  .login-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  
+.login-container input[type="text"],
+.login-container input[type="password"] {
+  width: calc(100% - 20px); /* 减去左右内边距 */
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+  
+.login-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: #5cb85c;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* 登录按钮的悬停效果 */
+.login-container button:hover {
+  background-color: #4cae4c;
+}
