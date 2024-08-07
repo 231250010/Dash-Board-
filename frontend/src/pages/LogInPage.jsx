@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../styles/login.css';
+import '../styles/LogInPage.css';
 
 function Login() {
   const [username, setUsername] = useState('');
@@ -8,7 +8,7 @@ function Login() {
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    navigate('/HomePage');
+    navigate('/Home');
   };
 
   const handleSubmit = (e) => {
@@ -34,7 +34,7 @@ function Login() {
           value={password} 
           onChange={(e) => setPassword(e.target.value)} 
         />
-        <button type="submit" >Login</button>
+        <button type="submit"  onClick={handleLogin}>Login</button>
       </form>
     </div>
   );

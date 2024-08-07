@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import TopMenu from '../components/TopMenu';
 import ProjectList from '../components/ProjectList';
 import ProjectBoard from '../components/ProjectBoard';
-import '../styles/styles.css'; // 确保样式路径正确
+import '../styles/HomePage.css'; // 确保样式路径正确
 
 const HomePage = () => {
   const navigate = useNavigate();

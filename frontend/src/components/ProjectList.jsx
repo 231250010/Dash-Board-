@@ -1,6 +1,6 @@
 // src/components/ProjectList.jsx
 import React from 'react';
-import './ProjectList.css';
+import '../styles/ProjectList.css';
 
 const ProjectList = ({ projects, onSelect }) => {
   return (
