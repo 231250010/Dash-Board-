@@ -4,6 +4,9 @@ import { useNavigate } from 'react-router-dom';
 import TopMenu from '../components/TopMenu';
 import ProjectList from '../components/ProjectList';
 import ProjectBoard from '../components/ProjectBoard';
+import ToDoList from '../components/ToDoList';
+import DoingList from '../components/DoingList';
+import DoneList from '../components/DoneList';
 import '../styles/HomePage.css'; // 确保样式路径正确
 
 const HomePage = () => {
@@ -14,10 +17,12 @@ const HomePage = () => {
     { id: 2, name: 'Project 2' },
   ]);
   const [selectedProject, setSelectedProject] = useState(null);
-  const [tasks, setTasks] = useState({
-    todo: [{ id: '1', name: 'Task 1' }],
-    done: [{ id: '2', name: 'Task 2' }],
-  });
+
+  const [selectedTask, setSelectedTask] = useState(null);
+  const [tasks, setTasks] = useState(
+    [{ id: '1', name: 'Task 1' },
+     { id: '2', name: 'Task 2' }],
+  );
 
   const handleLogin = () => {
     navigate('/login');
@@ -26,6 +31,11 @@ const HomePage = () => {
   const handleSelectProject = (project) => {
     setSelectedProject(project);
   };
+//
+  const handleSelectTask = (task) => {
+    setSelectedTask(task);
+  };
+
 
   const handleDragEnd = (result) => {
     if (!result.destination) return;
@@ -47,9 +57,13 @@ const HomePage = () => {
       <TopMenu onLogin={handleLogin} />
       <div className="main-content">
         <ProjectList projects={projects} onSelect={handleSelectProject} />
-        {loggedIn && selectedProject && (
+        <ToDoList tasks={tasks} onSelect={handleSelectTask} />
+        <DoingList  />
+        <DoneList  />
+           {loggedIn && selectedProject && (
           <ProjectBoard tasks={tasks} onDragEnd={handleDragEnd} />
         )}
+
       </div>
     </div>
   );

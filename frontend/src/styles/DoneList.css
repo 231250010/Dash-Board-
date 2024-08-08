@@ -1,0 +1,46 @@
+.done-list {
+    background-color: #ffff81; /* 设置背景颜色为白色 */
+    padding: 1rem; /* 内边距为1rem，即1rem宽度和1rem高度 */
+    box-sizing: border-box; /* 盒子模型设置为border-box */
+    height: calc(100vh - 150px); /* 高度设置为视口高度减去100px，用于留出顶部菜单的空间 */
+    overflow-y: auto; /* 当内容超出高度时，在垂直方向上添加滚动条 */
+    position: fixed; /* 设置为固定位置 */
+    border-radius: 10px;
+    top: 100px; /* 距离顶部菜单的高度为50px */
+    left: 85%; /* 将元素从左侧移动到中间，通过设置left为50% */
+    transform: translateX(-50%); /* 通过平移(-50%)将元素从中间位置向左移动一半宽度，从而实现居中效果 */
+    width: 20%; /* 设置元素的宽度为20% */
+  }
+  
+  .done-list h2 {
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .task-item {
+    background-color: #ffffff;
+    border-radius: 4px;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .task-item:hover {
+    background-color: #ffffb1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .task-item.selected {
+    background-color: #b3d9ff; /* 选中的项目背景颜色 */
+    border-color: #007bff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .task-item p {
+    margin: 0;
+    font-size: 1rem;
+    color: #333;
+  }
+  
