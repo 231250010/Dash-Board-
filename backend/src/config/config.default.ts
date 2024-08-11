@@ -1,5 +1,6 @@
 "use strict";
 
+import { Project } from "../entity/project";
 import {User} from "../entity/user";
 
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -18,12 +19,17 @@ const ormConfig = {
     type: 'mysql',
     host: 'localhost',
     port: 3306,
-    username: 'test',
-    password: 'password',
+    username: 'root',
+    password: 'Myhongqiche123!',
     database: 'test',
-    entities: [User],
+    entities: [User,Project],
     synchronize: true, // 生产环境下建议关闭
+    },
+    jwt: {
+      secret: 'hahah12h23qwa', // replace with a strong secret key
+      expiresIn: '1h', // token expiry time
     }
 };
+
 
 exports.default = ormConfig;

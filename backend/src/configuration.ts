@@ -4,6 +4,7 @@ import * as validate from '@midwayjs/validate';
 import * as info from '@midwayjs/info';
 import * as orm from '@midwayjs/orm';
 import * as cors from '@koa/cors';
+import * as jwt from '@midwayjs/jwt';
 import { join } from 'path';
 import { ReportMiddleware } from './middleware/report.middleware';
 
@@ -12,6 +13,7 @@ import { ReportMiddleware } from './middleware/report.middleware';
     koa,
     validate,
     orm,
+    jwt,
     {
       component: info,
       enabledEnvironment: ['local'],

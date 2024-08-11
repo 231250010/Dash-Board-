@@ -1,21 +1,39 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import '../styles/LogInPage.css';
 
 function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  const handleLogin = () => {
-    navigate('/Home');
+  const handleLogin = async () => {
+    try {
+      const response = await axios.post('http://127.0.0.1:7001/api/login', {
+        username,
+        password,
+      });
+
+      if (response.data.success) {
+        // Store the JWT token in localStorage
+        localStorage.setItem('token', response.data.token);
+        localStorage.setItem('username', username);
+        localStorage.setItem('userId', response.data.userId);
+        // Navigate to the home page
+        navigate('/Home');
+      } else {
+        setError('Invalid username or password');
+      }
+    } catch (error) {
+      setError('An error occurred during login');
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // 模拟登录逻辑
-    navigate('/');
+    handleLogin();
   };
 
   return (
@@ -34,7 +52,8 @@ function Login() {
           value={password} 
           onChange={(e) => setPassword(e.target.value)} 
         />
-        <button type="submit"  onClick={handleLogin}>Login</button>
+        {error && <p className="error">{error}</p>}
+        <button type="submit">Login</button>
       </form>
     </div>
   );

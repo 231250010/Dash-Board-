@@ -1,18 +1,18 @@
-import { Provide} from '@midwayjs/core';
+import { Provide, Inject } from '@midwayjs/core';
 import { IUserOptions } from '../interface';
-// import { Inject } from '@midwayjs/decorator';
-
 import { Repository } from 'typeorm';
 import { User } from '../entity/user';
-// import { UserRepository } from '../repository/user.repository';
 import { InjectEntityModel } from '@midwayjs/orm';
-
+import { JwtService } from '@midwayjs/jwt';
 
 @Provide()
 export class UserService {
 
   @InjectEntityModel(User)
   userRepository: Repository<User>;
+
+  @Inject()
+  jwtService: JwtService;
 
   async getUser(options: IUserOptions) {
     return {
@@ -22,17 +22,24 @@ export class UserService {
       email: 'xxx.xxx@xxx.com',
     };
   }
-  
-  
 
-  async validateUser(username: string, password: string): Promise<boolean> {
-    if (!this.userRepository) {
-      throw new Error('UserRepository is not initialized');
-    }
-
+  async validateUser(username: string, password: string): Promise<{id,username,token}> {
     const user = await this.userRepository.findOne({
-      where: { username, password}
+      where: { username, password }
     });
-    return !!user;
+
+    if (user) {
+      // If the user is valid, generate a JWT token
+      const token = this.jwtService.signSync({ id: user.id, username: user.username });
+      return {id: user.id, username: user.username, token};
+    }else{
+      //create a new user
+      const newUser = new User();
+      newUser.username = username;
+      newUser.password = password;
+      await this.userRepository.save(newUser);
+      const token = this.jwtService.signSync({ id: newUser.id, username: newUser.username });
+      return {id: newUser.id, username: newUser.username, token};
+    }
   }
 }

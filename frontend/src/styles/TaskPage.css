@@ -1,0 +1,30 @@
+.flex-container {
+    display: flex;
+    flex-direction: column; /* 设置flex容器的主轴为垂直方向 */
+}
+
+        .task-container {
+            display: flex;
+            justify-content: space-between; /* 水平方向对齐方式保持不变 */
+            align-items: center; /* 默认值，子元素居中对齐 */
+            height: 80vh;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        .task-header {
+            display: flex;
+            justify-content: space-between; /* 水平方向对齐方式保持不变 */
+    align-items: center; /* 默认值，子元素居中对齐 */
+            margin-bottom: 10px;
+   font-weight: bold;
+
+        }
+        .task-input {
+            margin-right: 0;
+        }
+        .task-name input, .task-date input[type="text"], .task-description textarea, .task-status select, .task-comment textarea, .task-attachment input[type="file"], .task-header label {
+            font-weight: bold;
+        }

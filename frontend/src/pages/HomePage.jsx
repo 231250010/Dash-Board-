@@ -24,6 +24,8 @@ const HomePage = () => {
      { id: '2', name: 'Task 2' }],
   );
 
+
+  
   const handleLogin = () => {
     navigate('/login');
   };
