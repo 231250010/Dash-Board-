@@ -43,4 +43,20 @@
     font-size: 1rem;
     color: #333;
   }
+  .addtask-button {
+    position: fixed;
+  bottom: 10px;
+  left: 10px;
+  width: 90%; /* 或者你想要的宽度 */
+  padding: 10px; /* 按钮的内边距 */
+  text-align: center; /* 文本居中 */
+  box-sizing: border-box; /* 包括padding和border在内的宽度计算 */
+  background-color: #ffffff; /* 背景颜色 */
+  color: rgb(0, 0, 0); /* 文本颜色 */
+  border: none; /* 无边框 */
+  cursor: pointer; /* 鼠标指针样式 */
+  }
   
+  .addtask-button:hover {
+    background-color: #e0e0e0;
+  }

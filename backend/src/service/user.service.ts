@@ -23,6 +23,12 @@ export class UserService {
     };
   }
 
+  async getUserInfo() {
+    //从token中获取用户信息
+
+    
+  }
+
   async validateUser(username: string, password: string): Promise<{id,username,token}> {
     const user = await this.userRepository.findOne({
       where: { username, password }

@@ -24,6 +24,7 @@
     padding: 0.5rem;
     margin-bottom: 0.5rem;
     cursor: pointer;
+    user-select: none;
     transition: background-color 0.3s, box-shadow 0.3s;
   }
   

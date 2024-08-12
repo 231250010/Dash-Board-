@@ -18,9 +18,10 @@ function Login() {
 
       if (response.data.success) {
         // Store the JWT token in localStorage
+        console.log('Token:', response.data);
         localStorage.setItem('token', response.data.token);
         localStorage.setItem('username', username);
-        localStorage.setItem('userId', response.data.userId);
+        localStorage.setItem('userId', response.data.token.id);
         // Navigate to the home page
         navigate('/Home');
       } else {

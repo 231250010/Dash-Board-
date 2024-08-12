@@ -1,35 +1,57 @@
-/* TopMenu.css */
-
-/* TopMenu.css */
-
 .top-menu {
-    background-color: #acff8c;
-    color: white;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    height: 60px;
-    width: 100%;
-    box-sizing: border-box;
-    margin: 0;
-    position: fixed; /* 保持在顶部 */
-    top: 0;
-    left: 0;
-  }
-  
-  .login-button {
-    background-color: #f4f4f4;
-    color: #333;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .login-button:hover {
-    background-color: #e0e0e0;
-  }
-  
+  background-color: #acff8c;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 60px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  position: fixed; /* 保持在顶部 */
+  top: 0;
+  left: 0;
+}
 
-  
+.login-button {
+  background-color: #f4f4f4;
+  color: #333;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background-color: #e0e0e0;
+}
+
+/* 用户信息容器 */
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-right: 10px; /* 确保用户信息不紧贴边缘 */
+}
+
+/* 用户名称显示 */
+.user-info span {
+  margin-right: 10px; /* 为用户ID和登出按钮留出间距 */
+  cursor: pointer;
+  color: #333; /* 用户名称的颜色 */
+}
+
+/* 登出按钮 */
+.logout-button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px; /* 确保与用户名称间距合适 */
+}
+
+.logout-button:hover {
+  background-color: #cc0000;
+}
