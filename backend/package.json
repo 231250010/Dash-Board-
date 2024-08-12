@@ -3,6 +3,23 @@
   "version": "1.0.0",
   "description": "",
   "private": true,
+  "main": "bootstrap.js",
+  "bin": "bootstrap.js",
+  "pkg": {
+    "assets": [
+      "node_modules/**/*",
+      "src/**/*",
+      "dist/**/*",
+      "config/**/*",
+      "public/**/*"
+    ],
+    "scripts": [
+      "bootstrap.js"
+    ],
+    "targets": [
+      "node16-win-x64"
+    ]
+  },
   "dependencies": {
     "@koa/cors": "^5.0.0",
     "@midwayjs/bootstrap": "^3.16.6",
