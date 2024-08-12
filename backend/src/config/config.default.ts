@@ -27,7 +27,7 @@ const ormConfig = {
     host: 'localhost',
     port: 3306,
     username: 'root',
-    password: 'password',
+    password: 'wuyue050829',
     database: 'test',
     entities: [User,Project,Task],
     synchronize: true, // 生产环境下建议关闭
